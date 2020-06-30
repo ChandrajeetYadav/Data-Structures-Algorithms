@@ -1,9 +1,9 @@
 package com.chandu.dsa.tree;
 
 public class BinaryTreeNode {
-    private int data;
-    private BinaryTreeNode left;
-    private BinaryTreeNode right;
+    public int data;
+    public BinaryTreeNode left;
+    public BinaryTreeNode right;
 
     BinaryTreeNode(int data){
         this.data = data;
@@ -42,5 +42,16 @@ public class BinaryTreeNode {
                 ", left=" + left +
                 ", right=" + right +
                 '}';
+    }
+
+    public static BinaryTreeNode createDemoBinaryTree(){
+        BinaryTreeNode root = new BinaryTreeNode(1);
+        root.left = new BinaryTreeNode(2);
+        root.right = new BinaryTreeNode(3);
+        root.left.left = new BinaryTreeNode(4);
+        root.left.right = new BinaryTreeNode(5);
+        root.right.left = new BinaryTreeNode(6);
+        root.right.right = new BinaryTreeNode(7);
+        return root;
     }
 }
