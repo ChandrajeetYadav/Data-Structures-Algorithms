@@ -1,5 +1,7 @@
 package com.chandu.dsa.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class TreeTraversal {
@@ -100,6 +102,25 @@ public class TreeTraversal {
                 stack.pop();
             }
             prev = current;
+        }
+    }
+
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
+    public static void levelOrderTraversal(BinaryTreeNode root){
+        if(root == null)
+            return;
+        Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
+        queue.add(root);
+        BinaryTreeNode temp;
+
+        while(!queue.isEmpty()){
+            temp = queue.poll();
+            System.out.print(temp.data + " ");
+            if(temp.left != null)
+                queue.add(temp.left);
+            if(temp.right != null)
+                queue.add(temp.right);
         }
     }
 }
