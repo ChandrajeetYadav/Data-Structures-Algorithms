@@ -9,6 +9,8 @@ public class SizeOfTree {
         System.out.println("Size of Tree is: " + SizeOfTree.getSize(root));
     }
 
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
     public static int getSize(BinaryTreeNode root){
         if (root == null)
             return 0;
