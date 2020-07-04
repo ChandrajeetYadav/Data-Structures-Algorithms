@@ -3,23 +3,23 @@ package com.chandu.dsa.tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class LeftViewOfBinaryTree {
-    static int currentLevel;
+public class RightViewOfBinaryTree {
+    static int currentLevel = 0;
     public static void main(String[] args) {
         BinaryTreeNode root = BinaryTreeNode.createDemoBinaryTree();
         System.out.println("InOrder traversal of tree:");
         TreeTraversal.inOrderTraversal(root);
         System.out.println();
-        System.out.println("Left view of Binary Tree with iterative approach:");
-        leftViewIterative(root);
+        System.out.println("Right view of Binary Tree with iterative approach:");
+        rightViewIterative(root);
         System.out.println();
-        System.out.println("Left view of Binary Tree with recursive approach:");
-        leftViewRecursive(root);
+        System.out.println("Right view of Binary Tree with recursive approach:");
+        rightViewRecursive(root);
     }
 
     //Time Complexity: O(n)
     //Space Complexity: O(n)
-    public static void leftViewIterative(BinaryTreeNode root){
+    public static void rightViewIterative(BinaryTreeNode root){
         if(root == null)
             return;
         Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
@@ -33,7 +33,7 @@ public class LeftViewOfBinaryTree {
 
             while(i++ < size){
                 temp = queue.poll();
-                if(i == 1)
+                if(i == size)
                     System.out.print(temp.data + " ");
                 if(temp.left != null)
                     queue.add(temp.left);
@@ -43,13 +43,11 @@ public class LeftViewOfBinaryTree {
         }
     }
 
-    //Time Complexity: O(n)
-    //Space Complexity: O(n)
-    public static void leftViewRecursive(BinaryTreeNode root){
-        leftViewRecursive(root, 1);
+    public static void rightViewRecursive(BinaryTreeNode root){
+        rightViewRecursive(root, 1);
     }
 
-    public static void leftViewRecursive(BinaryTreeNode root, int level){
+    public static void rightViewRecursive(BinaryTreeNode root, int level){
         if(root == null)
             return;
         if(currentLevel < level){
@@ -57,7 +55,7 @@ public class LeftViewOfBinaryTree {
             currentLevel = level;
         }
 
-        leftViewRecursive(root.left, level+1);
-        leftViewRecursive(root.right, level+1);
+        rightViewRecursive(root.right, level + 1);
+        rightViewRecursive(root.left, level + 1);
     }
 }
