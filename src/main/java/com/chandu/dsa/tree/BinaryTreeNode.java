@@ -5,7 +5,7 @@ public class BinaryTreeNode {
     public BinaryTreeNode left;
     public BinaryTreeNode right;
 
-    BinaryTreeNode(int data){
+    public BinaryTreeNode(int data){
         this.data = data;
         left = null;
         right = null;
