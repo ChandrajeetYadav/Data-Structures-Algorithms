@@ -3,7 +3,7 @@ package com.chandu.dsa.tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LCAinBST {
+public class LCAinBinaryTree {
     public static void main(String[] args) {
         BinaryTreeNode root = BinaryTreeNode.createDemoBinaryTree();
         System.out.println("InOrder traversal of tree: ");
