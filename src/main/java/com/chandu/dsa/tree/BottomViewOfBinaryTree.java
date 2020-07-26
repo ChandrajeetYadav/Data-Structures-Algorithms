@@ -22,7 +22,7 @@ public class BottomViewOfBinaryTree{
         printBottomView(root);
     }
 
-    //Time Complexity: O(n), strictly it's O(n log n) as treemap insertion takes O(log n)
+    //Time Complexity: O(n), strictly it's O(n log n) as tree map insertion takes O(log n)
     //Space Complexity: O(n)
     public static void printBottomView(BottomViewOfBinaryTree root){
         if(root == null)
