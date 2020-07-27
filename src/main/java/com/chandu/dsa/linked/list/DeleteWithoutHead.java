@@ -21,6 +21,8 @@ public class DeleteWithoutHead {
         delete(lastNode);
     }
 
+    //Time Complexity: O(1)
+    //Space Complexity: O(1)
     public static void delete(Node node){
         if(node == null || node.next==null){
             System.out.println("Can't perform this operation as node is last node or null");
