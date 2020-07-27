@@ -17,12 +17,16 @@ public class StackUsingLinkedList {
         Node.printList(top);
     }
 
+    //Time Complexity: O(1)
+    //Space Complexity: O(1)
     public static void push(int data){
         Node node = new Node(data);
         node.next = top;
         top = node;
     }
 
+    //Time Complexity: O(1)
+    //Space Complexity: O(1)
     public static int pop(){
         if(top == null)
             return -1;
