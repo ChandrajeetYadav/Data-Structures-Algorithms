@@ -1,23 +1,29 @@
 package com.chandu.dsa.linked.list;
 
-public class AntiClockwiseRotationByKplaces {
+public class ClockwiseRotationByKplaces {
     public static void main(String[] args) {
         Node head = Node.createDemoLinkedList();
         System.out.println("Original linked list: ");
         Node.printList(head);
-        int k = 3;
+        int k = 1;
         head = rotate(head, k);
-        System.out.println("Linked list after rotating anti-clockwise by " + k + " places: ");
+        System.out.println("Linked list after rotating clockwise by " + k + " places: ");
         Node.printList(head);
     }
 
     //Time complexity: O(n)
     //Space complexity: O(1)
-    public static Node rotate(Node head, int k){
-        if(k==0 || head==null)
+    public static Node rotate(Node head, int k) {
+        if(head==null)
+            return null;
+        int len = length(head);
+        if(k > len)
+            k = k % len;
+        k = len - k;
+        if(k==0 || k==len)
             return head;
-        Node curr = head;
         int count = 1;
+        Node curr = head;
         while(count<k && curr!=null){
             curr = curr.next;
             count++;
@@ -30,6 +36,15 @@ public class AntiClockwiseRotationByKplaces {
         curr.next = head;
         head = kthNode.next;
         kthNode.next = null;
-        return  head;
+        return head;
+    }
+
+    private static int length(Node head){
+        int length = 0;
+        while(head != null){
+            head = head.next;
+            length++;
+        }
+        return length;
     }
 }
