@@ -1,5 +1,9 @@
 package com.chandu.dsa.linked.list;
-
+/*Input:
+        List1: 5->6->3 // represents number 365
+        List2: 8->4->2 // represents number 248
+  Output:
+        Resultant list: 3->1->6 // represents number 613*/
 public class AddTwoNumbers {
     public static void main(String[] args) {
         Node head1 = Node.createLinkedList(new int[]{5, 6, 3});
@@ -27,8 +31,8 @@ public class AddTwoNumbers {
         Node.printList(addLists(head3, head4));
     }
 
-    //Time complexity: O(M + N)
-    //Space complexity: O(M + N)
+    //Time complexity: O(max(M, N))
+    //Space complexity: O(max(M, N) + 1)
     public static Node addLists(Node head1, Node head2){
         int sum;
         int carry = 0;
@@ -56,7 +60,7 @@ public class AddTwoNumbers {
     }
 
     //Time complexity: O(M + N)
-    //Space complexity: O(M + N)
+    //Space complexity: O(max(M,N) + 1)
     public static Node addBrute(Node head1, Node head2){
         if(head1 == null)
             return head2;
