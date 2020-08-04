@@ -61,6 +61,7 @@ public class AddTwoNumbers {
 
     //Time complexity: O(M + N)
     //Space complexity: O(max(M,N) + 1)
+    //Note: This will fail if list is too large
     public static Node addBrute(Node head1, Node head2){
         if(head1 == null)
             return head2;
