@@ -19,6 +19,8 @@ public class SwapPairwise {
         Node.printList(head2);
     }
 
+    //Time Complexity: O(n)
+    //Space Complexity: O(1)
     private static Node swapByExchangingLinksIterative(Node head){
         if(head==null || head.next==null)
             return head;
@@ -39,6 +41,8 @@ public class SwapPairwise {
         return head;
     }
 
+    //Time Complexity: O(n)
+    //Space Complexity: O(n)
     private static Node swapByExchangingLinksRecursive(Node head){
         if(head==null || head.next==null)
             return head;
@@ -59,7 +63,7 @@ public class SwapPairwise {
     }
 
     //Time Complexity: O(n)
-    //Space Complexity: O(1)
+    //Space Complexity: O(n)
     private static void swapByExchangingDataRecursive(Node head){
         if(head==null || head.next==null)
             return;
