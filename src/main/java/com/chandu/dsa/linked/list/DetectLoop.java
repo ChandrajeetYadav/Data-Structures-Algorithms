@@ -7,7 +7,7 @@ public class DetectLoop {
     public static void main(String[] args) {
         Node head1 = Node.createDemoLinkedList();
         Node head2 = Node.createLinkedList(new int[] {1, 2, 3, 4, 5, 6});
-        head1.next.next.next.next = head1.next;
+        head1.next.next.next.next.next = head1.next;
         //System.out.println("Is loop present in List 1: " + detectLoopUsingHashing(head1));
         //System.out.println("Is loop present in List 2: " + detectLoopUsingHashing(head2));
         //System.out.println("Is loop present in List 1: " + detectLoopByMarkingDummyNode(head1));
