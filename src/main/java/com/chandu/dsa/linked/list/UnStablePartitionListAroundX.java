@@ -11,6 +11,8 @@ public class UnStablePartitionListAroundX {
         Node.printList(head);
     }
 
+    //Time Complexity: O(n)
+    //Space Complexity: O(1)
     public static Node partition(Node head, int x){
         if(head == null)
             return null;
