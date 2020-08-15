@@ -11,7 +11,7 @@ public class MinHeap {
         heap = new int[capacity];
     }
     public static void main(String[] args) {
-        int[] arr = {5, 3, 17, 10, 84, 19, 6, 22, 9};
+        int[] arr = {5, 3, 17, 10, 84, 19, 6, 22, 9, 11};
         MinHeap minHeap = new MinHeap(arr.length);
         minHeap.buildHeap(arr);
         System.out.println("Min heap is as below:");
@@ -40,7 +40,7 @@ public class MinHeap {
     }
 
     public boolean isLeaf(int i){
-        return i>heapSize/2-1 && i<=heapSize;
+        return i>heapSize/2-1 && i<heapSize;
     }
 
     public void swap(int i, int j){
@@ -70,10 +70,14 @@ public class MinHeap {
             return;
         int left = leftChild(pos);
         int right = rightChild(pos);
-        if(heap[pos]>heap[left] || heap[pos]>heap[right]){
-            int min = heap[left]<heap[right] ? left : right;
-            swap(pos, min);
-            minHeapify(min);
+        int smallest = pos;
+        if(left<heapSize && heap[pos]>heap[left])
+            smallest = left;
+        if(right<heapSize && heap[smallest]>heap[right])
+            smallest = right;
+        if(smallest != pos){
+            swap(pos, smallest);
+            minHeapify(smallest);
         }
     }
 
