@@ -12,7 +12,7 @@ public class MaxHeap {
     }
 
     public static void main(String[] args) {
-        int[] arr = {5, 3, 17, 10, 84, 19, 6, 22, 9};
+        int[] arr = {5, 3, 17, 10, 84, 19, 6, 22, 9, 11};
         MaxHeap maxHeap = new MaxHeap(arr.length);
         maxHeap.buildMaxHeap(arr);
         System.out.println("Max heap is: ");
@@ -47,17 +47,21 @@ public class MaxHeap {
     public void maxHeapify(int pos){
         if(isLeaf(pos))
             return;
+        int largest = pos;
         int left = leftChild(pos);
         int right = rightChild(pos);
-        if(heap[pos]<heap[left] || heap[pos]<heap[right]){
-            int maxPos = heap[left]>heap[right] ? left : right;
-            swap(pos, maxPos);
-            maxHeapify(maxPos);
+        if(left<size && heap[pos]<heap[left])
+            largest = left;
+        if(right<size && heap[largest]<heap[right])
+            largest = right;
+        if(largest != pos){
+            swap(pos, largest);
+            maxHeapify(largest);
         }
     }
 
     public boolean isLeaf(int pos){
-        return pos>(size)/2-1 && pos<=size;
+        return pos>(size)/2-1 && pos<size;
     }
 
     public int leftChild(int pos){
