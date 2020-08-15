@@ -40,7 +40,7 @@ public class MinHeap {
     }
 
     public boolean isLeaf(int i){
-        return i>(heapSize-1)/2 && i<=heapSize;
+        return i>heapSize/2-1 && i<=heapSize;
     }
 
     public void swap(int i, int j){
