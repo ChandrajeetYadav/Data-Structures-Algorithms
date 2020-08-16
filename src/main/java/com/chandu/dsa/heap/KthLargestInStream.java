@@ -17,6 +17,8 @@ public class KthLargestInStream {
         }
     }
 
+    //Time Complexity: O(log k)
+    //Space Complexity: O(k)
     public static int getKthLargestUsingPriorityQueue(int num, PriorityQueue<Integer> pq, int k){
         if(pq.size() < k)
             pq.add(num);
@@ -29,6 +31,8 @@ public class KthLargestInStream {
         return pq.size()==k ? pq.peek() : -1;
     }
 
+    //Time Complexity: O(log k)
+    //Space Complexity: O(k)
     public static int getKthLargestUsingArray(int num, int[] arr, int count, int k){
         addElement(arr, num, k);
         if(count < k)
