@@ -10,6 +10,8 @@ public class RearrangeCharactersNoAdjacentConsecutive {
         System.out.println("Is rearranging possible for s2: " + isRearrangePossible(s2));
     }
 
+    //Time complexity: O(n log n)
+    //Space complexity: O(n)
     public static boolean isRearrangePossible(String s){
         StringBuilder evenSb = new StringBuilder();
         StringBuilder oddSb = new StringBuilder();
