@@ -40,19 +40,28 @@ public class DijkstrasAlgorithm {
         Arrays.fill(distance, Integer.MAX_VALUE);
         Arrays.fill(path, -1);
         distance[source] = 0;
+        ArrayList<Integer> settled = new ArrayList<>();
         PriorityQueue<Node> pq = new PriorityQueue<>((Node a, Node b)-> a.cost - b.cost);
         pq.add(new Node(source, 0));
         int dist;
         int v;
-        while (!pq.isEmpty()){
+        while (settled.size() != vertexCount){
             v = pq.poll().vertex;
+            settled.add(v);
             for (Node node : edges.get(v)){
-                dist = distance[v] + node.cost;
-                if(distance[node.vertex] > dist){
-                    distance[node.vertex] = dist;
-                    node.cost = dist;
-                    pq.add(node);
-                    path[node.vertex] = v;
+                if(!settled.contains(node.vertex)){
+                    dist = distance[v] + node.cost;
+                    if(distance[node.vertex] == Integer.MAX_VALUE){
+                        distance[node.vertex] = dist;
+                        node.cost = dist;
+                        pq.add(node);
+                        path[node.vertex] = v;
+                    }
+                    else if(distance[node.vertex] > dist){
+                        distance[node.vertex] = dist;
+                        node.cost = dist;
+                        path[node.vertex] = v;
+                    }
                 }
             }
         }
