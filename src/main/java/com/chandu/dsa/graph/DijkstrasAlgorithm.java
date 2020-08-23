@@ -16,14 +16,22 @@ public class DijkstrasAlgorithm {
     }
 
     public static void main(String[] args) {
-        DijkstrasAlgorithm obj = new DijkstrasAlgorithm(5);
+        /*DijkstrasAlgorithm obj = new DijkstrasAlgorithm(5);
         obj.addEdge(0,new Node(1, 9));
         obj.addEdge(0,new Node(2, 6));
         obj.addEdge(0,new Node(3, 5));
         obj.addEdge(0,new Node(4, 3));
 
         obj.addEdge(2,new Node(1, 2));
+        obj.addEdge(2,new Node(3, 4));*/
+
+        DijkstrasAlgorithm obj = new DijkstrasAlgorithm(5);
+        obj.addEdge(0,new Node(1, 4));
+        obj.addEdge(0,new Node(2, 1));
+        obj.addEdge(1,new Node(4, 4));
+        obj.addEdge(2,new Node(1, 2));
         obj.addEdge(2,new Node(3, 4));
+        obj.addEdge(3,new Node(4, 4));
 
         obj.dijkstra(0);
     }
