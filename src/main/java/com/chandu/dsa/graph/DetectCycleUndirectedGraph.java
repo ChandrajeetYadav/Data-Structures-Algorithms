@@ -35,8 +35,11 @@ public class DetectCycleUndirectedGraph {
 
     private void addEdge(int source, int destination){
         edges.get(source).add(destination);
+        edges.get(destination).add(source);
     }
 
+    //Time Complexity : O(V + E)
+    //Space Complexity : O(V)
     public boolean detectCycleUsingBfs(){
         boolean[] isVisited = new boolean[vertexCount];
         for (int i=0; i<vertexCount; i++){
@@ -72,6 +75,8 @@ public class DetectCycleUndirectedGraph {
         return false;
     }
 
+    //Time Complexity : O(V + E)
+    //Space Complexity : O(V)
     public boolean detectCycleUsingDfs(){
         boolean[] isVisited = new boolean[vertexCount];
         for (int i=0; i<vertexCount; i++){
