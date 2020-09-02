@@ -39,6 +39,7 @@ public class HuffmanCoding {
 
     //Time Complexity: O(n log n)
     //Space Complexity: O(n)
+    //n = number of unique characters
     private static HuffmanNode buildHuffmanTree(char[] charArray, int[] charFreq){
         if(charArray==null || charFreq==null || charArray.length==0 ||
             charFreq.length==0 || charArray.length!=charFreq.length)
