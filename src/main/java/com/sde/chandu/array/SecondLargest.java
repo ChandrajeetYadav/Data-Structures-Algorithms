@@ -8,17 +8,17 @@ public class SecondLargest {
         int[] arr2 = {10, 5, 10};
         int[] arr3 = {10, 10, 10};
 
-        System.out.println("Second largest using sorting in arr1: " + getSecondLargestUsingSorting(arr1));
-        System.out.println("Second largest using sorting in arr2: " + getSecondLargestUsingSorting(arr2));
-        System.out.println("Second largest using sorting in arr3: " + getSecondLargestUsingSorting(arr3));
+        System.out.println("Second largest in arr1: " + getSecondLargestEfficient(arr1));
+        System.out.println("Second largest in arr2: " + getSecondLargestEfficient(arr2));
+        System.out.println("Second largest in arr3: " + getSecondLargestEfficient(arr3));
 
         System.out.println("\nSecond largest using brute in arr1: " + getSecondLargestBrute(arr1));
         System.out.println("Second largest using brute in arr2: " + getSecondLargestBrute(arr2));
         System.out.println("Second largest using brute in arr3: " + getSecondLargestBrute(arr3));
 
-        System.out.println("\nSecond largest in arr1: " + getSecondLargestEfficient(arr1));
-        System.out.println("Second largest in arr2: " + getSecondLargestEfficient(arr2));
-        System.out.println("Second largest in arr3: " + getSecondLargestEfficient(arr3));
+        System.out.println("\nSecond largest using sorting in arr1: " + getSecondLargestUsingSorting(arr1));
+        System.out.println("Second largest using sorting in arr2: " + getSecondLargestUsingSorting(arr2));
+        System.out.println("Second largest using sorting in arr3: " + getSecondLargestUsingSorting(arr3));
     }
 
     //Time complexity: O(n log n)
@@ -63,9 +63,9 @@ public class SecondLargest {
 
         for (int i=1; i<arr.length; i++){
             if (arr[i] > largest){
-                secondLargest = largest;
+                //secondLargest = largest;
                 largest = arr[i];
-            } else if (arr[i]>secondLargest && arr[i]!=largest)
+            } else if (arr[i]>secondLargest && arr[i]<largest)
                 secondLargest = arr[i];
         }
         return secondLargest;
