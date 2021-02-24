@@ -38,7 +38,7 @@ public class SubArraySumPositive {
             return;
         int currSum = arr[0], start=0;
         for(int i=1; i<=arr.length; i++){
-            while(currSum>targetSum && start<i-1){
+            while(currSum>targetSum && start<i){
                 currSum -= arr[start];
                 start++;
             }
