@@ -17,12 +17,13 @@ public class MajorityElement {
         System.out.println("arr2, majority element hashing: " + findMajorityHashing(arr2));
         System.out.println();
 
+        System.out.println("arr1, majority element Moore Voting: " + findMajorityMooreVotingAlgorithm(arr1));
+        System.out.println("arr2, majority element Moore Voting: " + findMajorityMooreVotingAlgorithm(arr2));
+        System.out.println();
+
         System.out.println("arr1, majority element sorting: " + findMajoritySorting(arr1));
         System.out.println("arr2, majority element sorting: " + findMajoritySorting(arr2));
         System.out.println();
-
-        System.out.println("arr1, majority element Moore Voting: " + findMajorityMooreVotingAlgorithm(arr1));
-        System.out.println("arr2, majority element Moore Voting: " + findMajorityMooreVotingAlgorithm(arr2));
     }
 
     //Time complexity: O(n^2)
