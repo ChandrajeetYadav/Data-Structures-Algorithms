@@ -2,8 +2,7 @@ package com.sde.chandu.searching;
 
 public class PeakElement {
     public static void main(String[] args) {
-        //int[] arr = {5, 10, 20, 15}; // O/p: 2
-        int[] arr = {1,2,3}; // O/p: 2
+        int[] arr = {5, 10, 20, 15}; // O/p: 2
         System.out.println("peak element, brute: " + findPeakElementIndexBrute(arr));
         System.out.println("peak element, binary search: " + findPeakElementIndexBinarySearch(arr));
     }
