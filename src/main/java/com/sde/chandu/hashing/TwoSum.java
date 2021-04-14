@@ -57,7 +57,7 @@ public class TwoSum {
         boolean isPairFound = false;
         while (low < high){
             if (arr[low]+arr[high] == sum){
-                System.out.println("Pair with sum " + sum + " is : " + arr[low] + "," + arr[high]);
+                System.out.println("Pair with sum " + sum + " is: " + arr[low] + "," + arr[high]);
                 low++;
                 high--;
                 isPairFound = true;
