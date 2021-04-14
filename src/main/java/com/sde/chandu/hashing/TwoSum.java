@@ -38,7 +38,7 @@ public class TwoSum {
         for (int i=0; i<arr.length-1; i++){
             for (int j=i+1; j<arr.length; j++){
                 if (arr[i]+arr[j] == sum) {
-                    System.out.println("Pair with sum " + sum + " is : " + arr[i] + "," + arr[j]);
+                    System.out.println("Pair with sum " + sum + " is: " + arr[i] + "," + arr[j]);
                     isPairFound = true;
                 }
             }
