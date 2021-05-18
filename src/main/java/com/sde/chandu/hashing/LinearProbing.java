@@ -2,21 +2,21 @@ package com.sde.chandu.hashing;
 
 import java.util.Arrays;
 
-public class QuadraticProbing {
+public class LinearProbing {
     public static void main(String[] args) {
-        int[] hashTable = new int[11];
-        int[] arr = {21, 10, 32, 43};
+        int[] hashTable = new int[10];
+        int[] arr = {4, 14, 24, 44};
 
         System.out.println("Original hashTable: ");
         printArray(hashTable);
-        quadraticProbing(hashTable, arr);
-        System.out.println("Hashtable after quadratic probing: ");
-        printArray(hashTable); // O/p: 10	-1	-1	32	-1	-1	-1	-1	43	-1	21
+        linearProbing(hashTable, arr);
+        System.out.println("Hashtable after linear probing: ");
+        printArray(hashTable); // O/p: -1	-1	-1	-1	4	14	24	44	-1	-1
     }
 
-    //Time complexity: O(n)
-    //Space complexity: O(1)
-    private static void quadraticProbing(int[] hashTable, int[] arr) {
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+    private static void linearProbing(int[] hashTable, int[] arr) {
         Arrays.fill(hashTable, -1);
         int hash, tempHash;
         for (int i : arr) {
@@ -24,8 +24,8 @@ public class QuadraticProbing {
             if (hashTable[hash] == -1)
                 hashTable[hash] = i;
             else {
-                for (int j = 0; j < arr.length; j++) {
-                    tempHash = (hash + j * j) % hashTable.length;
+                for (int j = 0; j < hashTable.length; j++) {
+                    tempHash = (hash + j) % hashTable.length;
                     if (hashTable[tempHash] == -1) {
                         hashTable[tempHash] = i;
                         break;
