@@ -16,21 +16,20 @@ public class LinearProbing {
 
     // Time complexity: O(n)
     // Space complexity: O(1)
-    private static void linearProbing(int[] hashTable, int[] arr) {
-        Arrays.fill(hashTable, -1);
-        int hash, tempHash;
-        for (int i : arr) {
-            hash = i % hashTable.length;
-            if (hashTable[hash] == -1)
-                hashTable[hash] = i;
-            else {
-                for (int j = 0; j < hashTable.length; j++) {
-                    tempHash = (hash + j) % hashTable.length;
-                    if (hashTable[tempHash] == -1) {
-                        hashTable[tempHash] = i;
-                        break;
-                    }
-                }
+    private static void linearProbing(int[] hash, int[] arr) {
+        Arrays.fill(hash, -1);
+        int size = hash.length;
+
+        int index;
+        for (int i = 0; i < arr.length; i++) {
+            if (size == 0)
+                return;
+            index = arr[i] % hash.length;
+            while (hash[index] != -1 && hash[index] != arr[i])
+                index = (index + 1) % hash.length;
+            if (hash[index] != arr[i]) {
+                hash[index] = arr[i];
+                size--;
             }
         }
     }
