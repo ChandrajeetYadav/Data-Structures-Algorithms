@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ConvertToRomanNumber {
     public static void main(String[] args) {
-        int num = 3549;
+        int num = 3549; // MMMDXLIX
         System.out.println(num + " roman representation: " + intToRoman(num));
         System.out.println(num + " roman representation 2: " + intToRoman2(num));
     }
