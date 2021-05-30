@@ -3,8 +3,8 @@ package com.sde.chandu.string;
 public class ImplementStrStr {
     public static void main(String[] args) {
         String s = "GeeksForGeeks";
-        String x1 = "Fr";
-        String x2 = "For";
+        String x1 = "Fr"; // O/p: -1
+        String x2 = "For"; // O/p: 5
 
         System.out.println("Brute, " + x1 + " present in " + s + " at: " + isSubstringBrute(s, x1));
         System.out.println("Brute, " + x2 + " present in " + s + " at: " + isSubstringBrute(s, x2));
