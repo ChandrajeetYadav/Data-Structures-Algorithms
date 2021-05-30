@@ -12,6 +12,8 @@ public class CheckIfStringIsRotatedBy2Places {
         System.out.println(s3 + " and " + s4 + " are rotated: " + isRotated(s3, s4));
     }
 
+    // Time complexity : O(n)
+    // Space complexity : O(n)
     private static boolean isRotated(String s1, String s2) {
         if (s1.length() != s2.length())
             return false;
