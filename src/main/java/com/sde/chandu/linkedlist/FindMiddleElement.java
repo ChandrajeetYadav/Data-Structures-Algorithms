@@ -54,7 +54,7 @@ public class FindMiddleElement {
         return slow.data;
     }
 
-    // Time complexity : O(n/2) = O(n)
+    // Time complexity : O(n) = O(n)
     // Space complexity : O(1)
     private static int getMiddleElementUsingOddEvenApproach(Node head) {
         if (head == null)
