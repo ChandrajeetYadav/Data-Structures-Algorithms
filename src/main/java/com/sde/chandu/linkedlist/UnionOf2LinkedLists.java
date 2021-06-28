@@ -56,8 +56,11 @@ public class UnionOf2LinkedLists {
     }
 
     private static Node addNode(Node last, int data) {
-        last.next = new Node(data);
-        return last.next;
+        if (last.data != data) {
+            last.next = new Node(data);
+            last = last.next;
+        }
+        return last;
     }
 
     private static boolean isPresent(Node head, int data) {
@@ -78,8 +81,6 @@ public class UnionOf2LinkedLists {
             return head1;
         head1 = mergeSort(head1);
         head2 = mergeSort(head2);
-        head1.display();
-        head2.display();
         Node dummy = new Node(0);
         Node last = dummy;
         while (head1 != null && head2 != null) {
