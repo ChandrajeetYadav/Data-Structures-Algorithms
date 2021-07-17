@@ -18,12 +18,12 @@ public class StackUsingArray {
     }
 
     // Time Complexity : O(1)
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return top < 0;
     }
 
     // Time Complexity : O(1)
-    boolean push(int data) {
+    public boolean push(int data) {
         if (top >= MAX) {
             System.out.println("Stack Overflow");
             return false;
@@ -33,7 +33,7 @@ public class StackUsingArray {
     }
 
     // Time Complexity : O(1)
-    int pop() {
+    public int pop() {
         if (top < 0) {
             System.out.println("Stack underflow");
             return -1;
@@ -42,7 +42,7 @@ public class StackUsingArray {
     }
 
     // Time Complexity : O(1)
-    int peek() {
+    public int peek() {
         if (top < 0) {
             System.out.println("Stack underflow");
             return 0 - 1;
