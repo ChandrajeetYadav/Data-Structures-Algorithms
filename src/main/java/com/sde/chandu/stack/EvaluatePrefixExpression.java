@@ -3,45 +3,43 @@ package com.sde.chandu.stack;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class EvaluatePostfixExpression {
+public class EvaluatePrefixExpression {
     public static void main(String[] args) {
-        String expWithoutSpace = "231*+9-";
-        System.out.println("Value of postfix expression " + expWithoutSpace + " : " + evaluatePostfixWithSingleDigitNumber(expWithoutSpace));
-        expWithoutSpace = "123+*8-";
-        System.out.println("Value of postfix expression " + expWithoutSpace + " : " + evaluatePostfixWithSingleDigitNumber(expWithoutSpace));
+        String expSingleDigit = "+9*26";
+        System.out.println("Value of prefix expression " + expSingleDigit + " : " + evaluatePrefixWithSingleDigitNumber(expSingleDigit));
         System.out.println();
 
-        String expWithSpace = "100 200 + 2 / 5 * 7 +";
-        System.out.println("Value of postfix expression " + expWithSpace + " : " + evaluatePostfixWithMultipleDigitNumber(expWithSpace));
+        String expMultipleDigit = "+ 9 * 12 6";
+        System.out.println("Value of prefix expression " + expMultipleDigit + " : " + evaluatePrefixWithMultipleDigitNumber(expMultipleDigit));
     }
 
     // Time complexity : O(n)
     // Space complexity : O(n)
-    private static int evaluatePostfixWithSingleDigitNumber(String s) {
+    private static int evaluatePrefixWithSingleDigitNumber(String s) {
         if (s == null || s.length() == 0)
             return 0;
         Deque<Integer> stack = new ArrayDeque<>();
         char ch;
-        int val1, val2;
-        for (int i = 0; i < s.length(); i++) {
+        int a, b;
+        for (int i = s.length() - 1; i >= 0; i--) {
             ch = s.charAt(i);
             if (Character.isDigit(ch))
                 stack.push(ch - '0');
             else {
-                val1 = stack.pop();
-                val2 = stack.pop();
+                a = stack.pop();
+                b = stack.pop();
                 switch (ch) {
                     case '+':
-                        stack.push(val2 + val1);
+                        stack.push(a + b);
                         break;
                     case '-':
-                        stack.push(val2 - val1);
+                        stack.push(a - b);
                         break;
                     case '*':
-                        stack.push(val2 * val1);
+                        stack.push(a * b);
                         break;
                     case '/':
-                        stack.push(val2 / val1);
+                        stack.push(a / b);
                         break;
                 }
             }
@@ -51,40 +49,41 @@ public class EvaluatePostfixExpression {
 
     // Time complexity : O(n)
     // Space complexity : O(n)
-    private static int evaluatePostfixWithMultipleDigitNumber(String s) {
+    private static int evaluatePrefixWithMultipleDigitNumber(String s) {
         if (s == null || s.length() == 0)
             return 0;
         Deque<Integer> stack = new ArrayDeque<>();
         char ch;
-        int num, a, b;
-        for (int i = 0; i < s.length(); i++) {
+        int num, a, b, p;
+        for (int i = s.length() - 1; i >= 0; i--) {
             ch = s.charAt(i);
             if (ch == ' ')
                 continue;
             else if (Character.isDigit(ch)) {
                 num = 0;
-                while (i < s.length() && Character.isDigit(ch)) {
-                    num = num * 10 + (ch - '0');
-                    i++;
+                p = 0;
+                while (i >= 0 && Character.isDigit(ch)) {
+                    num = (int) Math.pow(10, p++) * (ch - '0') + num;
+                    i--;
                     ch = s.charAt(i);
                 }
-                i--;
+                i++;
                 stack.push(num);
             } else {
                 a = stack.pop();
                 b = stack.pop();
                 switch (ch) {
                     case '+':
-                        stack.push(b + a);
+                        stack.push(a + b);
                         break;
                     case '-':
-                        stack.push(b - a);
+                        stack.push(a - b);
                         break;
                     case '*':
-                        stack.push(b * a);
+                        stack.push(a * b);
                         break;
                     case '/':
-                        stack.push(b / a);
+                        stack.push(a / b);
                         break;
                 }
             }
