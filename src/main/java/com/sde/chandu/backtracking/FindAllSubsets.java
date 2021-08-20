@@ -13,7 +13,7 @@ public class FindAllSubsets {
     }
 
     // Time complexity : O(n * (2 ^ n))
-    // Space complexity : O(2 ^ n * X), X = Length of each subset.
+    // Space complexity : O((2 ^ n) * X), X = Length of each subset.
     private static void findAllSubsetsUsingLeftShiftOperator(int[] arr) {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> subset;
@@ -32,7 +32,7 @@ public class FindAllSubsets {
     //If we include the time taken to copy the subset vector into the res vector the time taken will be equal to the
     // size of the subset vector.
 
-    // Space complexity : O(2 ^ n * X), X = Length of each subset.
+    // Space complexity : O((2 ^ n) * X), X = Length of each subset.
     private static void findAllSubsetsUsingLBacktracking(int[] arr) {
         List<List<Integer>> subset = new ArrayList<>();
         findAllSubsetsUsingLBacktrackingUtil(arr, subset, new ArrayList<>(), 0);
