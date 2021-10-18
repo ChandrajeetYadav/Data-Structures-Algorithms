@@ -37,8 +37,6 @@ public class InOrderTraversal {
     // Space complexity : O(n)
     public static List<Integer> inOrderTraversalIterativeApproach(BinaryTreeNode root) {
         List<Integer> result = new ArrayList<>();
-        if (root == null)
-            return result;
         Stack<BinaryTreeNode> stack = new Stack<>();
         while (true) {
             if (root != null) {
