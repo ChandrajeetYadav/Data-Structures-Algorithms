@@ -3,7 +3,7 @@ package com.sde.chandu.tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class HeightOfATree {
+public class HeightOfBinaryTree {
     public static void main(String[] args) {
         BinaryTreeNode root = BinaryTreeNode.createBinaryTree();
         System.out.println("Height of the tree using recursion: " + getHeightRecursive(root));
