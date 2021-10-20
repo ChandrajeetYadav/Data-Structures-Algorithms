@@ -18,7 +18,7 @@ public class InOrderTraversal {
     }
 
     // Time complexity : O(n)
-    // Space complexity : O(1) if we don't consider stack size for function all.
+    // Space complexity : O(1) if we don't consider stack size for function call.
     // Space complexity : O(h) where h is the height of the tree
     // Space complexity : O(n) if the tree is skewed tree
     public static List<Integer> inOrderTraversalRecursive(BinaryTreeNode root) {
