@@ -31,6 +31,8 @@ public class LevelOrderTraversal {
         return result;
     }
 
+    // Time complexity: O(n ^ 2)
+    // Time complexity: O(n), if the tree is skewed tree
     // Space complexity : O(1) if we don't consider stack size for function call.
     // Space complexity : O(h) where h is the height of the tree
     // Space complexity : O(n) if the tree is skewed tree
