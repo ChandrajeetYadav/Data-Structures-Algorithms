@@ -9,7 +9,7 @@ public class PrintNodeThatDontHaveSibling {
         System.out.println("Nodes that don't have sibling, iterative approach: " + noSiblingIterative(root));
     }
 
-    // Time complexity: O(n)
+    // Time complexity: O(n log n)
     // Space complexity : O(w) = O(n) where w is the max width of the tree
     private static List<Integer> noSiblingIterative(BinaryTreeNode root) {
         if (root == null)
@@ -32,7 +32,7 @@ public class PrintNodeThatDontHaveSibling {
         return result;
     }
 
-    // Time complexity: O(n)
+    // Time complexity: O(n log n)
     // Space complexity : O(1) if we don't consider stack size for function call.
     // Space complexity : O(h) where h is the height of the tree
     // Space complexity : O(n) if the tree is skewed tree
