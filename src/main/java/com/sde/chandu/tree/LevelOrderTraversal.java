@@ -14,7 +14,7 @@ public class LevelOrderTraversal {
 
     // Time complexity : O(n)
     // Space complexity : O(n)
-    private static List<Integer> levelOrderTraversalIterative(BinaryTreeNode root) {
+    static List<Integer> levelOrderTraversalIterative(BinaryTreeNode root) {
         List<Integer> result = new ArrayList<>();
         Queue<BinaryTreeNode> queue = new LinkedList<>();
         if (root == null)
