@@ -12,7 +12,7 @@ public class ConstructTreeFromPostOrderAndInOrder {
         System.out.println("Inorder traversal of tree created, recursive approach: " + InOrderTraversal.inOrderTraversalRecursive(root));
         root = buildTreeRecursiveEfficient(inOrder, postOrder);
         System.out.println("Inorder traversal of tree created, recursive efficient approach: " + InOrderTraversal.inOrderTraversalRecursive(root));
-        root = buildTreeRecursiveIterative(inOrder, postOrder);
+        root = buildTreeIterative(inOrder, postOrder);
         System.out.println("Inorder traversal of tree created, iterative approach: " + InOrderTraversal.inOrderTraversalRecursive(root));
 
     }
@@ -69,7 +69,7 @@ public class ConstructTreeFromPostOrderAndInOrder {
 
     // Time complexity: O(n)
     // Space complexity: O(n)
-    private static BinaryTreeNode buildTreeRecursiveIterative(int[] inOrder, int[] postOrder) {
+    private static BinaryTreeNode buildTreeIterative(int[] inOrder, int[] postOrder) {
         BinaryTreeNode root = null, temp;
         Stack<BinaryTreeNode> stack = new Stack<>();
         Set<BinaryTreeNode> set = new HashSet<>();
