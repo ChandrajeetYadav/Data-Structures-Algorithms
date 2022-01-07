@@ -37,7 +37,7 @@ public class DFSAdjacencyList {
     }
 
     // Time complexity: O(V + E)
-    // Time complexity: O(V)
+    // Space complexity: O(V)
     private List<Integer> dfsRecursive(int start) {
         if (start < 0 || start >= V)
             return null;
@@ -57,7 +57,7 @@ public class DFSAdjacencyList {
     }
 
     // Time complexity: O(V + E)
-    // Time complexity: O(V)
+    // Space complexity: O(V)
     private List<Integer> dfsIterative(int start) {
         if (start < 0 || start >= V)
             return null;
