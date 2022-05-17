@@ -58,7 +58,7 @@ public class SubsetSum {
 
     // Time complexity: O(n * sum)
     // Space complexity: O(n * sum)
-    private static boolean isSubsetSumIterative(int[] arr, int sum) {
+    static boolean isSubsetSumIterative(int[] arr, int sum) {
         int n = arr.length;
         boolean[][] dp = new boolean[n + 1][sum + 1];
         // Initialization
