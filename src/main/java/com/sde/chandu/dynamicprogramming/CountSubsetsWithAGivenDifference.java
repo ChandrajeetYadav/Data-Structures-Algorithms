@@ -15,6 +15,8 @@ public class CountSubsetsWithAGivenDifference {
         int sum = 0;
         for (int i : arr)
             sum += i;
+        if (sum < Math.abs(diff) || (diff + sum) % 2 != 0)
+            return 0;
         int reqSum = (sum + diff) / 2;
         // This problem is now reduced to count of subsets with given sum.
         return CountOfSubsetsWithGivenSum.findNumberOfSubsetsIterative(arr, reqSum);
