@@ -59,7 +59,7 @@ public class CountOfSubsetsWithGivenSum {
 
     // Time complexity: O(n * sum)
     // Space complexity: O(n * sum)
-    private static int findNumberOfSubsetsIterative(int[] arr, int sum) {
+    static int findNumberOfSubsetsIterative(int[] arr, int sum) {
         int n = arr.length;
         int[][] dp = new int[n + 1][sum + 1];
 
