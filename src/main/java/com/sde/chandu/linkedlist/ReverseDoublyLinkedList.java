@@ -19,6 +19,13 @@ public class ReverseDoublyLinkedList {
         head = reverseUsingStack(head);
         head.display();
         System.out.println();
+
+        System.out.println("Original list: ");
+        head.display();
+        System.out.println("Doubly Linked list after reversing, using recursion: ");
+        head = reverseUsingRecursion(head);
+        head.display();
+        System.out.println();
     }
 
     // Time complexity : O(n)
@@ -51,5 +58,18 @@ public class ReverseDoublyLinkedList {
             temp = temp.next;
         }
         return head;
+    }
+
+    // Time complexity : O(n)
+    // Space complexity : O(1), ignoring recursion stack
+    private static DoublyLinkedList reverseUsingRecursion(DoublyLinkedList head) {
+        if (head == null)
+            return null;
+        DoublyLinkedList next = head.next;
+        head.next = head.prev;
+        head.prev = next;
+        if (head.prev == null)
+            return head;
+        return reverseUsingRecursion(head.prev);
     }
 }
