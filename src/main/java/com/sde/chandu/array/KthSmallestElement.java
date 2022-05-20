@@ -39,6 +39,8 @@ public class KthSmallestElement {
 
     // Time complexity: O(n * log n)
     // Space complexity: O(1)
+    //The worst case time complexity of the above solution is still O(n2). In the worst case, the randomized function
+    // may always pick a corner element. The expected time complexity of above randomized QuickSelect is O(n)
     private static int kthSmallestUsingRandomizedQuickSort(int[] arr, int l, int r, int k) {
         if (k > 0 && k <= r - l + 1) {
             int pos = randomPartition(arr, l, r);
