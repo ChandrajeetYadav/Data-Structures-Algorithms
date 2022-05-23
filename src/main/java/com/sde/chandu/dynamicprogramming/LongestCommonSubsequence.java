@@ -1,7 +1,5 @@
 package com.sde.chandu.dynamicprogramming;
 
-import java.util.Arrays;
-
 public class LongestCommonSubsequence {
     public static void main(String[] args) {
         String s1 = "ABCDGH";
