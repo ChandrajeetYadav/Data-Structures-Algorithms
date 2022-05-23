@@ -1,5 +1,7 @@
 package com.sde.chandu.linkedlist;
 
+import java.util.Stack;
+
 public class NthNodeFromEndOfLinkedList {
     public static void main(String[] args) {
         Node head = Node.createLinkedList(9);
@@ -15,6 +17,7 @@ public class NthNodeFromEndOfLinkedList {
         System.out.println(n + "th node from end, using 2 pointer: " + getNthNodeFromEndUsing2Pointer(head, n));
         n = 9;
         System.out.println(n + "th node from end, using 2 pointer: " + getNthNodeFromEndUsing2Pointer(head, n));
+        System.out.println(n + "th node from end, using stack: " + getNthNodeFromEndUsingStack(head, n));
     }
 
     // Time complexity : O(n)
@@ -67,6 +70,25 @@ public class NthNodeFromEndOfLinkedList {
             head = head.next;
         }
         return head.data;
+    }
+
+    // Time complexity : O(n)
+    // Space complexity : O(n)
+    private static int getNthNodeFromEndUsingStack(Node head, int n) {
+        if (head == null)
+            return -1;
+        Stack<Integer> stack = new Stack<>();
+        while (head != null) {
+            stack.push(head.data);
+            head = head.next;
+        }
+        if (stack.size() < n)
+            return -1;
+        int count = 0;
+        while (++count < n) {
+            stack.pop();
+        }
+        return stack.pop();
     }
 
     static class Helper {
