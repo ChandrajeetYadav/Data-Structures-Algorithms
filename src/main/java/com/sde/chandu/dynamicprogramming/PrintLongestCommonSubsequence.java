@@ -29,7 +29,7 @@ public class PrintLongestCommonSubsequence {
         }
     }
 
-    // Time complexity: O(m * n))
+    // Time complexity: O(m * n)
     // Space complexity: O(m * n)
     private static String printLCSMemoization(String s1, String s2) {
         if (s1 == null || s2 == null)
@@ -58,7 +58,7 @@ public class PrintLongestCommonSubsequence {
         return dp[m][n];
     }
 
-    // Time complexity: O(m * n))
+    // Time complexity: O(m * n)
     // Space complexity: O(m * n)
     private static String printLCSBottomUp(String s1, String s2) {
         if (s1 == null || s2 == null)
