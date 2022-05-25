@@ -7,6 +7,7 @@ public class LongestCommonSubsequence {
         System.out.println("Recursive approach, length of LCS: " + lcsRecursive(s1, s2));
         System.out.println("Memoization approach, length of LCS: " + lcsMemoization(s1, s2));
         System.out.println("Iterative / Bottom up approach, length of LCS: " + lcsBottomUp(s1, s2));
+        System.out.println("Iterative / Bottom up space optimized approach, length of LCS: " + lcsBottomUpOptimized(s1, s2));
     }
 
     // Time complexity: O(2 ^ max(m, n))
@@ -72,5 +73,25 @@ public class LongestCommonSubsequence {
             }
         }
         return dp[m][n];
+    }
+
+    // Time complexity: O(m * n))
+    // Space complexity: O(n)
+    private static int lcsBottomUpOptimized(String s1, String s2) {
+        if (s1 == null || s2 == null)
+            return 0;
+        int m = s1.length(), n = s2.length();
+        int[][] dp = new int[2][n + 1];
+        int curI = 0;
+        for (int i = 1; i <= m; i++) {
+            curI = i % 2;
+            for (int j = 1; j <= n; j++) {
+                if (s1.charAt(i - 1) == s2.charAt(j - 1))
+                    dp[curI][j] = 1 + dp[1 - curI][j - 1];
+                else
+                    dp[curI][j] = Math.max(dp[1 - curI][j], dp[curI][j - 1]);
+            }
+        }
+        return dp[curI][n];
     }
 }
