@@ -22,13 +22,13 @@ public class MatrixChainMultiplication {
     private static int matrixMultiplicationRecursive(int[] arr, int i, int j) {
         if (i >= j)
             return 0;
-        int ans = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
         for (int k = i; k < j; k++) {
-            int count = matrixMultiplicationRecursive(arr, i, k) + matrixMultiplicationRecursive(arr, k + 1, j)
+            int cost = matrixMultiplicationRecursive(arr, i, k) + matrixMultiplicationRecursive(arr, k + 1, j)
                     + arr[i - 1] * arr[k] * arr[j];
-            ans = Math.min(ans, count);
+            min = Math.min(min, cost);
         }
-        return ans;
+        return min;
     }
 
     //Time Complexity: O(n ^ 3 )
@@ -37,9 +37,9 @@ public class MatrixChainMultiplication {
         if (arr == null || arr.length < 2)
             return 0;
         int n = arr.length;
-        int[][] dp = new int[n + 1][n + 1];
-        for (int i = 0; i <= n; i++) {
-            for (int j = 0; j <= n; j++)
+        int[][] dp = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++)
                 dp[i][j] = -1;
         }
         return matrixMultiplicationMemoization(arr, 1, n - 1, dp);
