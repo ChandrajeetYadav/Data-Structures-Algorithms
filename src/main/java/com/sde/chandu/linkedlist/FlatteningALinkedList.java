@@ -17,8 +17,8 @@ public class FlatteningALinkedList {
         System.out.println();
     }
 
-    // Time complexity : O(m * n), m = number of sublists, n=number of nodes in each sublist
-    // Space commplexity : O(1)
+    // Time complexity : O(n * n * m), n = number of nodes in main linked list, m =number of nodes in each sublist
+    // Space commplexity : O(n)
     private static FlattenedList flattenList(FlattenedList head) {
         if (head == null || head.next == null)
             return head;
@@ -26,8 +26,8 @@ public class FlatteningALinkedList {
         //return mergeRecursive(head, flattenList(head.next));
     }
 
-    // Time complexity : O(m * n * log m)
-    // Space complexity : O(m)
+    // Time complexity : O(n * m * log n)
+    // Space complexity : O(n)
     private static FlattenedList flattenListUsingPriorityQueue(FlattenedList head) {
         if (head == null || head.next == null)
             return head;
