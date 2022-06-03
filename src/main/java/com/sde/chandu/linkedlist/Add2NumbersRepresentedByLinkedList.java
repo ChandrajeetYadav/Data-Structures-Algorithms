@@ -162,7 +162,7 @@ public class Add2NumbersRepresentedByLinkedList {
             carry = sum / 10;
             res = addNode(sum % 10, res);
         }
-        if (carry > 10)
+        if (carry > 0)
             res = addNode(carry, res);
         return res;
     }
